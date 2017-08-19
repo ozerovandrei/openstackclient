@@ -10,26 +10,22 @@ docker pull ozerov/openstackclient
 
 # Usage
 
-## If you have admin-openrc
+## If you have an admin-openrc
 
 ```bash
-# If you are using bash or zsh
+# Run a container and provide the admin-openrc file to the OpenStack client
 docker run --rm -it \
-  -v $(pwd)/admin-openrc:/root/admin-openrc \
+  -v $PWD/admin-openrc:/root/admin-openrc \
   ozerov/openstackclient bash
-# If you are using fish
-docker run --rm -it \
-  -v (pwd)/admin-openrc:/root/admin-openrc \
-  ozerov/openstackclient bash
-# Source file inside a container and run openstackclient
+# Source the file inside a container and run the OpenStack client
 source /root/admin-openrc
 openstack server list
 ```
 
-## Without admin-openrc
+## If you don't have an admin-openrc
 
 ```bash
-# Export all needed variables and run openstackclient
+# Export all needed variables and run the OpenStack client
 docker run --rm \
   -e OS_PROJECT_DOMAIN_NAME='domain_name' \
   -e OS_USER_DOMAIN_NAME='domain_name' \
