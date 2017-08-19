@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 LABEL maintainer="flunk13@gmail.com"
-LABEL version="1.0.0"
+LABEL version="1.0.3"
 RUN apt update && \
     apt -y install \
       curl \
