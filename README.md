@@ -2,10 +2,10 @@
 
 This repository contains Dockerfile to build image with OpenStack client.
 
-# Building
+# Download
 
 ```bash
-docker build --rm -t="ozerov/openstackclient"
+docker pull ozerov/openstackclient
 ```
 
 # Usage
@@ -39,5 +39,6 @@ docker run --rm \
   -e OS_AUTH_URL='auth_url' \
   -e OS_IDENTITY_API_VERSION='3' \
   -e OS_IMAGE_API_VERSION='2' \
-  openstackclient server list
+  ozerov/openstackclient \
+  openstack server list
 ```
