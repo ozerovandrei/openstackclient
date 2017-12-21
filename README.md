@@ -1,28 +1,30 @@
 # OpenStack client
 
 This repository contains Dockerfile to build image with OpenStack client.
+Bash-completions are included.
 
-# Download
+## Download
 
 ```bash
 docker pull ozerov/openstackclient
 ```
 
-# Usage
+## Usage
 
-## If you have an admin-openrc
+### If you have an admin-openrc
 
 ```bash
 # Run a container and provide the admin-openrc file to the OpenStack client
 docker run --rm -it \
   -v $PWD/admin-openrc:/root/admin-openrc \
-  ozerov/openstackclient bash
+  ozerov/openstackclient
+
 # Source the file inside a container and run the OpenStack client
 source /root/admin-openrc
 openstack server list
 ```
 
-## If you don't have an admin-openrc
+### If you don't have an admin-openrc
 
 ```bash
 # Export all needed variables and run the OpenStack client
