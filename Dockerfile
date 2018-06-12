@@ -25,7 +25,8 @@ RUN pip install -UI \
     pbr \
     setuptools \
     pytz \
-    git+https://github.com/openstack/python-openstackclient && \
+    git+https://github.com/openstack/python-openstackclient \
+    git+https://github.com/openstack/python-magnumclient && \
     rm -r /root/.cache
 
 RUN openstack complete > /etc/profile.d/openstack_completions.sh && \
