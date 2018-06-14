@@ -28,6 +28,7 @@ RUN pip install -UI \
     git+https://github.com/openstack/python-openstackclient \
     git+https://github.com/openstack/python-magnumclient \
     git+https://github.com/openstack/python-heatclient \
+    git+https://github.com/openstack/python-octaviaclient \
     git+https://github.com/gnocchixyz/python-gnocchiclient && \
     rm -r /root/.cache
 
