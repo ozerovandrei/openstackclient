@@ -1,6 +1,6 @@
 FROM alpine:latest
 LABEL maintainer="andrei.ozerov92@gmail.com"
-LABEL version="1.0.5"
+LABEL version="1.0.6"
 
 RUN apk update && apk upgrade && \
     apk add --no-cache \
