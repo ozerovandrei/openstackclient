@@ -32,6 +32,9 @@ RUN pip install -UI \
     git+https://github.com/gnocchixyz/python-gnocchiclient && \
     rm -r /root/.cache
 
+COPY files/get_kubectl.sh /root/get_kubectl.sh
+RUN chmod 755 /root/get_kubectl.sh
+
 RUN openstack complete > /etc/profile.d/openstack_completions.sh && \
     echo "source /etc/profile" > /root/.bashrc
 
