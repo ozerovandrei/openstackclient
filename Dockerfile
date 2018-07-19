@@ -32,6 +32,18 @@ RUN pip install -UI \
     git+https://github.com/gnocchixyz/python-gnocchiclient && \
     rm -r /root/.cache
 
+RUN apk del --purge --no-cache \
+    ca-certificates \
+    gcc \
+    git \
+    libffi \
+    libffi-dev \
+    linux-headers \
+    musl-dev \
+    openssl-dev \
+    python-dev && \
+    rm -rf /var/cache/apk/*
+
 COPY files/get_kubectl.sh /root/get_kubectl.sh
 RUN chmod 755 /root/get_kubectl.sh
 
