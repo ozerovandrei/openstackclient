@@ -13,6 +13,7 @@ RUN apk update && apk upgrade && \
     libffi-dev \
     linux-headers \
     musl-dev \
+    openssl \
     openssl-dev \
     python \
     python-dev && \
