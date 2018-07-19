@@ -35,8 +35,14 @@ RUN pip install -UI \
 COPY files/get_kubectl.sh /root/get_kubectl.sh
 RUN chmod 755 /root/get_kubectl.sh
 
+RUN echo "export SHELL='/bin/bash'" > /etc/profile.d/env_variables.sh
+
 RUN openstack complete > /etc/profile.d/openstack_completions.sh && \
     echo "source /etc/profile" > /root/.bashrc
+
+RUN sed -i \
+    's#root:x:0:0:root:/root:/bin/ash#root:x:0:0:root:/root:/bin/bash#g' \
+    /etc/passwd
 
 ENV HOME /root
 
